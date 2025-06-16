@@ -1,19 +1,60 @@
-<header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
+<header class="header-section">
+  <div class="container header-mobile-wrapper">
+    <nav class="header-page-nav">
+      <ul class="menu list">
+        <li class="menu-item">
+          <a class="menu-item-link link" href="#">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
+        <li class="menu-item">
+          <a class="menu-item-link link" href="#"
+            >Favorite
+            <svg
+              class="icon-arrowdown-droplist"
+              width="24"
+              height="24"
+              aria-label="arrow icon"
+            >
+              <use href="./icons/sprite.svg#icon-arrow-down"></use></svg
+          ></a>
         </li>
       </ul>
+
+      <!-- MENU LIST DROPDOWN DESKTOP -->
+
+      <ul class="menu-list-dropdown list">
+        <li class="menu-list-item"><a>Favorite cocktails</a></li>
+        <li class="menu-list-item"><a>Favorite ingredients</a></li>
+      </ul>
+
+      <!-- MENU LIST DROPDOWN DESKTOP -->
+
+      <a class="header-logo link" href="./index.html"
+        >Drinkify
+        <svg
+          class="logo-icon-header"
+          width="21"
+          height="18"
+          aria-label="logo cocktail"
+        >
+          <use href="../icons/sprite.svg#icon-cocktail"></use>
+        </svg>
+      </a>
     </nav>
+    <button class="menu-open-btn" type="button">
+      <svg
+        class="header-burger-icon"
+        width="32"
+        height="32"
+        aria-label="burger icon"
+      >
+        <use href="./icons/sprite.svg#icon-burger"></use>
+      </svg>
+    </button>
+    <div class="display">
+      <input type="checkbox" id="toggle" hidden />
+      <label class="label-toggle-thema" for="toggle">
+        <div class="circle"></div>
+      </label>
+    </div>
   </div>
 </header>
