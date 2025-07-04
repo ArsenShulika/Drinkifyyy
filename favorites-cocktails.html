@@ -19,11 +19,11 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/vanilla-app-template/index.js"></script>
+    <script type="module" crossorigin src="/vanilla-app-template/favorites-cocktails.js"></script>
     <link rel="modulepreload" crossorigin href="/vanilla-app-template/assets/vendor-Gv3iafvG.js">
     <link rel="modulepreload" crossorigin href="/vanilla-app-template/assets/mobile-menu-BWHXCWWr.js">
-    <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/mobile-menu-DMgLKhIb.css">
     <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/vendor-BIHqh4r3.css">
+    <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/mobile-menu-DMgLKhIb.css">
   </head>
   <body>
     <header class="header-section">
@@ -96,148 +96,6 @@
 </header>
 
     <main>
-      <section class="hero">
-  <div class="container hero-mobile-wrapper">
-    <div class="wrapper">
-      <div class="hero-title-desc-wrapper">
-        <h1 class="hero-title">
-          A party without <span class="accent-color">cocktails</span>
-          <br />
-          is not like a party
-        </h1>
-        <p class="hero-description">
-          From classic sips to exotic mixes, we're your key to becoming a
-          cocktail wizard!
-        </p>
-      </div>
-      <a class="hero-link link" href="#">view cocktails</a>
-    </div>
-
-    <div class="picture-title-wrapper">
-      <picture class="hero-image-girl-wrapper js-white-theme">
-        <source
-          srcset="../images/hero/girl_and_elements_desktop@1x.png 1x, ../images/hero/girl_and_elements_desktop@2x.png 2x"
-          media="(min-width:1280px)"
-        />
-        <source
-          srcset="../images/hero/girl_and_elements_tablet@1x.png 1x, ../images/hero/girl_and_elements_tablet@2x.png 2x"
-          media="(min-width:768px)"
-        />
-        <source
-          srcset="../images/hero/girl_and_elements_mobile@2x.png 2x"
-          media="(max-width:768px)"
-        />
-        <img
-          class="hero-image-girl"
-          src="../images/hero/girl_and_elements_mobile@1x.png 1x,"
-          alt="girl with cocktails"
-        />
-      </picture>
-
-      <picture class="hero-image-girl-wrapper js-black-theme">
-        <source
-          srcset="../images/hero/girl_desktop_black@1x.png 1x, ../images/hero/girl_desktop_black@2x.png 2x"
-          media="(min-width:1280px)"
-        />
-        <source
-          srcset="../images/hero/girl_tablet_black@1x.png 1x, ../images/hero/girl_tablet_black@2x.png 2x"
-          media="(min-width:768px)"
-        />
-        <source
-          srcset="../images/hero/girl_mobile_black@2x.png 2x"
-          media="(max-width:768px)"
-        />
-        <img
-          class="hero-image-girl"
-          src="../images/hero/girl_mobile_black@1x.png,"
-          alt="girl with cocktails"
-        />
-      </picture>
-
-      <p class="hero-description-search">
-        Search your favorite cocktail by ABC
-      </p>
-    </div>
-  </div>
-
-  <div class="thema"></div>
-</section>
-
-      <section class="search">
-  <h2 class="visually-hidden">Search</h2>
-  <div class="container alphabet-search-container">
-    <button class="search-custom-selector-btn js-searck-btn" type="button">
-      <p class="letters js-letter">A</p>
-      <svg
-        class="svg-icon-down visually-hidden"
-        aria-label="arrow down"
-        width="18"
-        height="18"
-      >
-        <use href="../icons/sprite.svg#icon-arrow-down"></use>
-      </svg>
-      <svg class="svg-icon-up" aria-label="arrow downn" width="18" height="18">
-        <use href="../icons/sprite.svg#icon-arrow-down"></use>
-      </svg>
-    </button>
-    <div class="list-container js-letters-list">
-      <ul class="alphabet-list list js-alphabet-list">
-        <li class="letter-item">A</li>
-        <li class="letter-item">B</li>
-        <li class="letter-item">C</li>
-        <li class="letter-item">D</li>
-        <li class="letter-item">E</li>
-        <li class="letter-item">F</li>
-        <li class="letter-item">G</li>
-        <li class="letter-item">H</li>
-        <li class="letter-item">I</li>
-        <li class="letter-item">G</li>
-        <li class="letter-item">K</li>
-        <li class="letter-item">L</li>
-        <li class="letter-item">M</li>
-        <li class="letter-item">N</li>
-        <li class="letter-item">O</li>
-        <li class="letter-item">P</li>
-        <li class="letter-item">Q</li>
-        <li class="letter-item">R</li>
-        <li class="letter-item">S</li>
-        <li class="letter-item">T</li>
-        <li class="letter-item">U</li>
-        <li class="letter-item">V</li>
-        <li class="letter-item">W</li>
-        <li class="letter-item">X</li>
-        <li class="letter-item">Y</li>
-        <li class="letter-item">Z</li>
-        <li class="letter-item">0</li>
-        <li class="letter-item">1</li>
-        <li class="letter-item">2</li>
-        <li class="letter-item">3</li>
-        <li class="letter-item">4</li>
-        <li class="letter-item">5</li>
-        <li class="letter-item">6</li>
-        <li class="letter-item">7</li>
-        <li class="letter-item">8</li>
-        <li class="letter-item">9</li>
-      </ul>
-    </div>
-    <form class="search-input-wrapper js-form">
-      <input
-        class="search-input js-cocktail-name"
-        type="text"
-        name="query"
-        value=""
-        title="Sambuca"
-        placeholder="Search"
-      />
-      <svg class="search-icon" width="16" height="16" aria-label="search icon">
-        <use href="../icons/sprite.svg#icon-search"></use>
-      </svg>
-    </form>
-
-    <!-- Custom Dropdown Structure -->
-  </div>
-</section>
-
       <section class="cocktails">
   <div class="container">
     <h2 class="cocktails-titel js-titel">Cocktails</h2>
