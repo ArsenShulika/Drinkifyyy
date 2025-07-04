@@ -1,0 +1,373 @@
+/* ==================== MOBILE ===================== */
+
+/*! ================ RESET STYLES =============== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+ul,
+ol,
+li {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input {
+    font-family: inherit;
+}
+
+button,
+.link {
+    cursor: pointer;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.list {
+    list-style-type: none;
+}
+
+
+
+/*! ================ COMMON STYLES  ============== */
+
+
+:root {
+    --container-padding: 5px;
+}
+
+body {
+    --text-color: #242424;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+
+}
+
+body.dark-theme {
+    --text-color: #fdfdff
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.accent-color {
+    font-style: italic;
+    color: #7e8fdd;
+}
+
+.container {
+    max-width: 355px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*! ================ COMMON STYLES  ================= */
+
+@media screen and (max-width: 767px) {
+    body {
+        background-image: url(../images/background_mobile_white.jpg);
+    }
+
+    body.dark-theme {
+        background-image: url('../images/background_mobile_black.jpg');
+    }
+}
+
+.header-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.menu,
+.menu-list-dropdown,
+.header-btn-thema-toggle,
+.header-burger-tablet,
+.display {
+    display: none;
+}
+
+body.dark-theme .menu-item-link {
+    color: var(--text-color);
+}
+
+.header-mobile-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: transform 250ms linear;
+}
+
+body.dark-theme .header-logo {
+    color: var(--text-color);
+}
+
+.header-logo:hover,
+.header-logo:focus,
+.menu-open-btn:hover,
+.menu-open-btn:focus {
+    transform: scale(1.14);
+}
+
+.logo-icon-header {
+    fill: #7E8FDD;
+}
+
+.menu-open-btn {
+    stroke: var(--text-color);
+    background-color: transparent;
+    border: none;
+    line-height: 0;
+    transition: transform 250ms linear;
+    padding: 0;
+}
+
+/* ================= MOBILE ===================== */
+/* ================= TABLET ===================== */
+
+@media screen and (min-width: 768px) {
+
+    body {
+        background-image: url(../images/background_tablet_white.jpg);
+    }
+
+    body.dark-theme {
+        background-image: url('../images/background_tablet_black.jpg');
+    }
+
+    /* ==================== HEADER ==================== */
+    .container {
+        max-width: 768px;
+        padding-left: 24px;
+        padding-right: 24px;
+        position: relative;
+    }
+
+    .header-section {
+        padding: 24px 0;
+    }
+
+    .menu-list-dropdown {
+        opacity: 0;
+        transition: opacity 250ms linear;
+        pointer-events: none;
+    }
+
+    .menu-list-dropdown.is-open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .header-logo {
+        font-size: 22px;
+        gap: 8px;
+    }
+
+    .logo-icon-header {
+        width: 29px;
+        height: 25px;
+    }
+
+    .header-burger-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .display {
+        display: none;
+    }
+
+}
+
+
+
+/* ==================== TABLET ==================== */
+/* ==================== DESKTOP ==================== */
+
+@media screen and (min-width: 1280px) {
+
+    body {
+        background-image: url(../images/background_desktop_white.jpg);
+
+    }
+
+    body.dark-theme {
+        background-image: url('../images/background_desktop_black.jpg');
+    }
+
+    .header-section {
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+
+    .container {
+        max-width: 1152px;
+        padding-right: 36px;
+        padding-left: 36px;
+    }
+
+    .menu-open-btn {
+        display: none;
+    }
+
+    .header-page-nav {
+        display: flex;
+        align-items: center;
+        gap: 302px;
+    }
+
+
+
+    .menu-list-dropdown {
+        top: 42px;
+        left: 68px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        background: #7e8fdd;
+        border-radius: 16px;
+        width: 192px;
+        height: 80px;
+        padding: 18px 24px;
+    }
+
+    .menu-list-item {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.28571;
+        letter-spacing: 0.02em;
+        color: rgba(253, 253, 255, 0.5);
+        cursor: pointer;
+        transition: color 250ms linear;
+    }
+
+    .menu-list-item:hover,
+    .menu-list-item:focus {
+        color: #fdfdff;
+    }
+
+    .header-logo {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 1.09091;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        color: inherit;
+    }
+
+    .logo-icon-header {
+        width: 29px;
+        height: 25px;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .menu-item-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.125;
+        letter-spacing: 0.02em;
+        color: #242424;
+    }
+
+    .icon-arrowdown-droplist {
+        margin-left: 4px;
+        stroke: #7E8FDD;
+    }
+
+    .toggle-thema-btn {
+        display: none;
+    }
+
+    .display {
+        display: block;
+        line-height: 0;
+    }
+
+    .label-toggle-thema {
+        display: inline-block;
+        width: 66px;
+        height: 34px;
+        background-color: transparent;
+        border: 2px solid #242424;
+        border-radius: 50px;
+        position: relative;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .label-toggle-thema .circle {
+        position: absolute;
+        top: 1.5px;
+        left: 2px;
+        width: 28px;
+        height: 28px;
+        background-color: #9cdfdf;
+        border-radius: 50%;
+        transition: transform 0.3s;
+    }
+
+    #toggle:checked+.label-toggle-thema {
+        background-color: #9cdfdf;
+        border: 2px solid #7e8fdd;
+    }
+
+    #toggle:checked+.label-toggle-thema .circle {
+        transform: translateX(32px);
+        background-color: #fdfdff;
+    }
+}
+
+/* ==================== DESKTOP ==================== */

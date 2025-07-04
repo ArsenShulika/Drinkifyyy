@@ -1,8 +1,8 @@
 <section class="search">
   <h2 class="visually-hidden">Search</h2>
   <div class="container alphabet-search-container">
-    <button class="search-custom-selector-btn" type="button">
-      <p class="letters">A</p>
+    <button class="search-custom-selector-btn js-searck-btn" type="button">
+      <p class="letters js-letter">A</p>
       <svg
         class="svg-icon-down visually-hidden"
         aria-label="arrow down"
@@ -15,8 +15,8 @@
         <use href="../icons/sprite.svg#icon-arrow-down"></use>
       </svg>
     </button>
-    <div class="list-container">
-      <ul class="alphabet-list list">
+    <div class="list-container js-letters-list">
+      <ul class="alphabet-list list js-alphabet-list">
         <li class="letter-item">A</li>
         <li class="letter-item">B</li>
         <li class="letter-item">C</li>
@@ -55,18 +55,19 @@
         <li class="letter-item">9</li>
       </ul>
     </div>
-    <div class="search-input-wrapper">
+    <form class="search-input-wrapper js-form">
       <input
-        class="search-input"
+        class="search-input js-cocktail-name"
         type="text"
-        name="cocktail-name"
+        name="query"
+        value=""
         title="Sambuca"
         placeholder="Search"
       />
       <svg class="search-icon" width="16" height="16" aria-label="search icon">
         <use href="../icons/sprite.svg#icon-search"></use>
       </svg>
-    </div>
+    </form>
 
     <!-- Custom Dropdown Structure -->
   </div>

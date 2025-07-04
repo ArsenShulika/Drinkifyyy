@@ -1,0 +1,97 @@
+/* ==================== MOBILE ================== */
+
+.page-footer-section {
+    background-color: #7e8fdd;
+    padding: 40px 0 80px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    display: flex;
+    gap: 4px;
+    font-weight: 600;
+    line-height: 1.125;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #fdfdff;
+}
+
+.logo-item-footer {
+    fill: #9CDFDF;
+}
+
+.footer-social-icons-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-desc {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.28571;
+    text-transform: uppercase;
+    color: #fdfdff;
+}
+
+.footer-social-list {
+    display: flex;
+    gap: 14px;
+}
+
+.footer-social-item {
+    stroke: #FDFDFF;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(253, 253, 255, 0.5);
+    border-radius: 6px;
+    width: 32px;
+    height: 32px;
+    fill: #FDFDFF;
+    stroke: #FDFDFF;
+    transition: fill 150ms linear, stroke 150ms linear, border 150ms linear, transform 250ms linear;
+}
+
+
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+    transform: scale(1.1);
+    fill: #9CDFDF;
+    stroke: #9CDFDF;
+    border: 1px solid #9CDFDF;
+}
+
+
+/* ==================== MOBILE ================== */
+/* ==================== TABLET ==================== */
+
+@media screen and (min-width: 768px) {
+
+
+    .footer-desc {
+        line-height: 1.1;
+    }
+
+    .footer-logo {
+        font-size: 22px;
+        line-height: 1.09091;
+    }
+
+    .logo-item-footer {
+        width: 29px;
+        height: 25px;
+    }
+
+}
+
+/* ==================== FOOTER ==================== */

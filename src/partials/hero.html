@@ -15,24 +15,8 @@
       <a class="hero-link link" href="#">view cocktails</a>
     </div>
 
-    <!-- <div class="hero-rectangle"></div>
-      <svg class="circle-big" width="24" height="25">
-        <use href="../icons/sprite.svg#icon-circle"></use>
-      </svg>
-      <svg class="circle-small" width="12" height="13">
-        <use href="../icons/sprite.svg#icon-circle"></use>
-      </svg>
-      <svg class="circle-middle" width="18" height="19">
-        <use href="../icons/sprite.svg#icon-circle"></use>
-      </svg>
-      <svg class="figure-small">
-        <use href="../icons/sprite.svg#icon-star"></use>
-      </svg>
-      <svg class="figure-big">
-        <use href="../icons/sprite.svg#icon-star"></use>
-      </svg> -->
     <div class="picture-title-wrapper">
-      <picture class="hero-image-girl-wrapper">
+      <picture class="hero-image-girl-wrapper js-white-theme">
         <source
           srcset="
             ../images/hero/girl_and_elements_desktop@1x.png 1x,
@@ -49,11 +33,37 @@
         />
         <source
           srcset="../images/hero/girl_and_elements_mobile@2x.png 2x"
-          media="(max-width:767px)"
+          media="(max-width:768px)"
         />
         <img
           class="hero-image-girl"
           src="../images/hero/girl_and_elements_mobile@1x.png 1x,"
+          alt="girl with cocktails"
+        />
+      </picture>
+
+      <picture class="hero-image-girl-wrapper js-black-theme">
+        <source
+          srcset="
+            ../images/hero/girl_desktop_black@1x.png 1x,
+            ../images/hero/girl_desktop_black@2x.png 2x
+          "
+          media="(min-width:1280px)"
+        />
+        <source
+          srcset="
+            ../images/hero/girl_tablet_black@1x.png 1x,
+            ../images/hero/girl_tablet_black@2x.png 2x
+          "
+          media="(min-width:768px)"
+        />
+        <source
+          srcset="../images/hero/girl_mobile_black@2x.png 2x"
+          media="(max-width:768px)"
+        />
+        <img
+          class="hero-image-girl"
+          src="../images/hero/girl_mobile_black@1x.png,"
           alt="girl with cocktails"
         />
       </picture>
@@ -63,4 +73,6 @@
       </p>
     </div>
   </div>
+
+  <div class="thema"></div>
 </section>

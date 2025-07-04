@@ -1,0 +1,256 @@
+/* ================= MOBILE =============== */
+
+.mobile-menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #7e8fdd;
+    transform: translateX(100%);
+    transition: transform 350ms linear;
+}
+
+.mobile-menu-wrapper.is-open {
+    transform: translateX(0%)
+}
+
+.mobile-menu-container {
+    position: relative;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.125;
+    letter-spacing: -0.01em;
+    color: #fdfdff;
+
+}
+
+.mobile-header {
+    padding-top: 23.5px;
+    display: flex;
+    gap: 139px;
+    align-items: center;
+    margin-bottom: 180px;
+
+}
+
+.mobile-menu-logo {
+    display: flex;
+    align-items: center;
+    fill: #9cdfdf;
+    text-transform: uppercase;
+}
+
+.mobile-menu-logo-icon {
+    margin-left: 4px;
+}
+
+.mobile-menu-display {
+    display: block;
+    width: 50px;
+    height: 25px;
+}
+
+.mobile-menu-label-toggle-thema {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background-color: transparent;
+    border: 1.50px solid #fdfdff;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.mobile-menu-label-toggle-thema .mobile-menu-circle {
+    position: absolute;
+    top: 1px;
+    left: 1.25px;
+    width: 20px;
+    height: 20px;
+    background-color: #9cdfdf;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+#toggl2:checked+.mobile-menu-label-toggle-thema {
+    background-color: #333;
+}
+
+#toggle2:checked+.mobile-menu-label-toggle-thema .mobile-menu-circle {
+    transform: translateX(24.75px);
+}
+
+.mobile-menu-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    stroke-width: 2px;
+    stroke: #fdfdff;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.mobile-menu-close-btn-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.mobile-menu-navigation {
+
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.33333;
+    letter-spacing: 0.02em;
+    color: #fdfdff;
+}
+
+.mobile-menu {
+    margin-bottom: 18px;
+}
+
+.mobile-menu li:not(:last-child) {
+    margin-bottom: 14px;
+}
+
+.mobile-menu-item-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.mobile-menu-icon-arrowdown-droplist {
+    display: inline-block;
+    margin-left: 4px;
+    width: 24px;
+    height: 24px;
+    stroke: #fdfdff;
+}
+
+.mobile-menu-dropdown {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 250ms linear;
+    pointer-events: none;
+}
+
+.mobile-menu-dropdown.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-menu-dropdown li:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.mobile-menu-dropdown-item {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: 0.02em;
+    color: rgba(253, 253, 255, 0.5);
+    cursor: pointer;
+    transition: color 250ms linear;
+}
+
+.mobile-menu-dropdown-item:hover,
+.mobile-menu-dropdown-item:focus {
+    color: inherit;
+}
+
+/* ================= MOBILE =============== */
+
+/* ================== TABLET ================= */
+
+@media screen and (min-width: 768px) {
+
+    .mobile-menu-container {
+        font-size: 22px;
+        line-height: 1.09091;
+        letter-spacing: -0.01em;
+    }
+
+    .mobile-header {
+        gap: 442px;
+        padding-top: 28px;
+    }
+
+    .mobile-menu-logo-icon {
+        width: 29px;
+        height: 25px;
+    }
+
+    .mobile-menu-close-btn {
+        top: 24px;
+        right: 32px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+
+    }
+
+    .mobile-menu-close-btn-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .mobile-menu-display {
+        display: block;
+        width: 66px;
+        height: 34px;
+    }
+
+    .mobile-menu-label-toggle-thema {
+        display: inline-block;
+        width: 66px;
+        height: 34px;
+        background-color: transparent;
+        border: 2px solid #fdfdff;
+        border-radius: 50px;
+        position: relative;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .mobile-menu-label-toggle-thema .mobile-menu-circle {
+        position: absolute;
+        top: 1.5px;
+        left: 2px;
+        width: 28px;
+        height: 28px;
+        background-color: #9cdfdf;
+        border-radius: 50%;
+        transition: transform 0.3s;
+    }
+
+    #toggle2:checked+.mobile-menu-label-toggle-thema {
+        background-color: transparent;
+    }
+
+    #toggle2:checked+.mobile-menu-label-toggle-thema .mobile-menu-circle {
+        transform: translateX(31px);
+    }
+
+    .mobile-menu-navigation {
+        font-size: 24px;
+    }
+
+}
+
+/* ================== TABLET ================= */

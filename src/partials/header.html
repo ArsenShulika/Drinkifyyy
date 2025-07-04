@@ -3,10 +3,10 @@
     <nav class="header-page-nav">
       <ul class="menu list">
         <li class="menu-item">
-          <a class="menu-item-link link" href="#">Home</a>
+          <a class="menu-item-link link" href="../index.html">Home</a>
         </li>
         <li class="menu-item">
-          <a class="menu-item-link link" href="#"
+          <a class="menu-item-link js-dropdown-menu-desktop-item link" href="#"
             >Favorite
             <svg
               class="icon-arrowdown-droplist"
@@ -21,9 +21,17 @@
 
       <!-- MENU LIST DROPDOWN DESKTOP -->
 
-      <ul class="menu-list-dropdown list">
-        <li class="menu-list-item"><a>Favorite cocktails</a></li>
-        <li class="menu-list-item"><a>Favorite ingredients</a></li>
+      <ul class="menu-list-dropdown js-menu-list-dropdown list">
+        <li class="menu-list-item">
+          <a class="link" href="../favorites-cocktails.html"
+            >Favorite cocktails</a
+          >
+        </li>
+        <li class="menu-list-item">
+          <a class="link" href="../favorite-ingrediets.html"
+            >Favorite ingredients</a
+          >
+        </li>
       </ul>
 
       <!-- MENU LIST DROPDOWN DESKTOP -->
@@ -40,7 +48,7 @@
         </svg>
       </a>
     </nav>
-    <button class="menu-open-btn" type="button">
+    <button class="menu-open-btn js-mobile-menu-open" type="button">
       <svg
         class="header-burger-icon"
         width="32"
@@ -52,7 +60,7 @@
     </button>
     <div class="display">
       <input type="checkbox" id="toggle" hidden />
-      <label class="label-toggle-thema" for="toggle">
+      <label class="label-toggle-thema js-toggle-theme-desktop" for="toggle">
         <div class="circle"></div>
       </label>
     </div>

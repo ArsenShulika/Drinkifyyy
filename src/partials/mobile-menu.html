@@ -1,33 +1,73 @@
-<div class="mobile-menu-wrapper visually-hidden">
+<div class="mobile-menu-wrapper js-mobile-menu">
   <div class="mobile-menu-container container">
-    <a class="mobile-menu-logo link" href="./index.html"
-      >Drinkify
-      <svg
-        class="mobile-menu-logo-icon"
-        width="21"
-        height="18"
-        aria-label="logo cocktail"
-      >
-        <use href="../icons/sprite.svg#icon-cocktail"></use>
-      </svg>
-    </a>
-    <button class="mobile-menu-close-btn" type="button">
+    <div class="mobile-header">
+      <a class="mobile-menu-logo link" href="./index.html"
+        >Drinkify
+        <svg
+          class="mobile-menu-logo-icon"
+          width="21"
+          height="18"
+          aria-label="logo cocktail"
+        >
+          <use href="../icons/sprite.svg#icon-cocktail"></use>
+        </svg>
+      </a>
+
+      <!-- THEMA TOGGLE -->
+
+      <div class="mobile-menu-display">
+        <input type="checkbox" id="toggle2" hidden />
+        <label
+          class="mobile-menu-label-toggle-thema js-toggle-theme"
+          for="toggle2"
+        >
+          <div class="mobile-menu-circle"></div>
+        </label>
+      </div>
+    </div>
+
+    <!-- THEMA TOGGLE -->
+
+    <button class="mobile-menu-close-btn js-mobile-menu-close" type="button">
       <svg
         class="mobile-menu-close-btn-icon"
-        width="16"
-        height="16"
         aria-label="mobile menu close icon"
       >
         <use href="../icons/sprite.svg#icon-close"></use>
       </svg>
     </button>
+
     <nav class="mobile-menu-navigation">
       <ul class="mobile-menu">
         <li class="mobile-menu-item list">
-          <a class="mobile-menu-link link" href="">Home</a>
+          <a class="mobile-menu-link link" href="../index.html">Home</a>
         </li>
-        <li class="mobile-menu-item list">
-          <a class="mobile-menu-link link" href="">Favorite</a>
+        <li class="mobile-menu-item js-mobile-menu-open-item list">
+          <a class="mobile-menu-item-link link" href="#"
+            >Favorite
+            <svg
+              class="mobile-menu-icon-arrowdown-droplist"
+              aria-label="arrow icon"
+            >
+              <use href="./icons/sprite.svg#icon-arrow-down"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <ul class="mobile-menu-dropdown js-mobile-menu-dropdown list">
+        <li class="mobile-menu-dropdown-item">
+          <a
+            class="mobile-menu-dropdown-link link"
+            href="../favorites-cocktails.html"
+            >Favorite cocktails</a
+          >
+        </li>
+        <li class="mobile-menu-dropdown-item">
+          <a
+            class="mobile-menu-dropdown-link link"
+            href="../favorite-ingrediets.html"
+            >Favorite ingredients</a
+          >
         </li>
       </ul>
     </nav>

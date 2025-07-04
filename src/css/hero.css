@@ -1,0 +1,268 @@
+/* =================== MOBILE ============== */
+
+body {
+    --text-color: #242424;
+}
+
+body.dark-theme {
+    --text-color: #fdfdff;
+}
+
+.js-white-theme {
+    display: block;
+}
+
+body.dark-theme .js-white-theme {
+    display: none;
+}
+
+.js-black-theme {
+    display: none;
+}
+
+body.dark-theme .js-black-theme {
+    display: block;
+}
+
+.hero {
+    padding-top: 48px;
+    padding-bottom: 7px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 36px;
+    flex-direction: column;
+    margin-bottom: 21px;
+    max-width: 355px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-title-desc-wrapper {
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+}
+
+.hero-title {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.1875;
+    color: var(--text-color);
+}
+
+.hero-description,
+.hero-description-search {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: var(--text-color);
+}
+
+.hero-link {
+    font-weight: 600;
+    background: #7e8fdd;
+    font-size: 14px;
+    line-height: 1.42857;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #fdfdff;
+    border-radius: 12px;
+    padding: 14px 28px;
+    width: 178px;
+    height: 48px;
+    transition: background-color 250ms linear;
+}
+
+.hero-link:hover,
+.hero-link:focus {
+    background-color: #6e7fcf;
+}
+
+.picture-title-wrapper {
+    position: relative;
+}
+
+.hero-image-girl-wrapper {
+    max-width: none;
+    margin-left: calc(-1 * var(--container-padding));
+    margin-right: calc(-1 * var(--container-padding));
+}
+
+.hero-description-search {
+    position: absolute;
+    bottom: 24px;
+    left: 89px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    width: 173px;
+}
+
+/* =================== MOBILE ===================== */
+
+/* ==================== TABLET ==================== */
+
+@media screen and (min-width: 768px) {
+
+    .hero {
+        padding: 170px 0 187px;
+    }
+
+    .hero-mobile-wrapper {
+        position: relative;
+    }
+
+    .wrapper {
+        display: flex;
+        gap: 48px;
+        max-width: 371px;
+        flex-shrink: 0;
+        width: 371px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .hero-title-desc-wrapper {
+        gap: 24px;
+        width: 371px;
+    }
+
+    .accent-color {
+        font-style: italic;
+        color: #7e8fdd;
+    }
+
+    .hero-description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+
+        width: 338px;
+    }
+
+    .hero-tablet-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .tablet-wrapper {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .hero-title {
+        font-weight: 400;
+        font-size: 44px;
+        line-height: 1.09091;
+        width: 384px;
+    }
+
+
+    .hero-images-wrapper {
+        width: 427px;
+        height: 593px;
+    }
+
+    .hero-image-girl-wrapper {
+        width: 427px;
+        height: 593px;
+    }
+
+    .hero-description-search {
+        left: 118px;
+        bottom: -1px;
+    }
+
+    .hero-link {
+        border-radius: 12px;
+        padding: 22px 44px;
+        width: 245px;
+        height: 68px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.33333;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #fdfdff;
+    }
+
+    .picture-title-wrapper {
+        width: 427px;
+        height: 593px;
+        display: inline-block;
+        position: absolute;
+        left: 368px;
+        top: -124px;
+        overflow: hidden;
+    }
+
+}
+
+/* ==================== TABLET ==================== */
+/* ==================== DASKTOP ==================== */
+
+@media screen and (min-width: 1280px) {
+
+    .wrapper {
+
+        width: 555px;
+        max-width: 555px;
+        flex-shrink: 0;
+
+    }
+
+    .hero-title {
+        width: 555px;
+        font-size: 64px;
+    }
+
+    .hero-description {
+        width: 478px;
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    .hero-images-wrapper {
+        display: block;
+        width: 529px;
+        height: 627px;
+    }
+
+    .picture-title-wrapper {
+        position: absolute;
+        width: 529px;
+        /*!! якщо забираю розміри обгортки картинка обрізається */
+        height: 672px;
+        display: inline-block;
+        position: absolute;
+        left: 647px;
+        top: -122px;
+        overflow: hidden;
+    }
+
+    .hero-image-girl-wrapper {
+        width: 529px;
+        height: 672px;
+    }
+
+    .hero-description-search {
+        left: 160px;
+        font-size: 18px;
+        line-height: 1.33333;
+        letter-spacing: 0.02em;
+        width: 219px;
+
+    }
+
+    .hero-image-girl {
+        width: 530px;
+        height: 672px;
+    }
+
+}
+
+/* ==================== DESKTOP ==================== */

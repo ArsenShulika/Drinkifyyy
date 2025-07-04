@@ -1,0 +1,282 @@
+/* ============== MOBILE ================== */
+
+
+
+.cocktails {
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+.cocktails-titel {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.16667;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+.cocktails-list-item {
+    border-radius: 20px;
+    width: 335px;
+    height: 471px;
+    box-shadow: 0 4px 46px 0 rgba(0, 0, 0, 0.05);
+    background-color: #fdfdff;
+    ;
+    padding: 14px 14px 20px 14px;
+}
+
+body.dark-theme .cocktails-list-item {
+    background-color: #232330;
+    box-shadow: 0 4px 46px 0 rgba(0, 0, 0, 0.3);
+    /* можеш змінити інтенсивність */
+}
+
+
+
+.cocktails-img {
+    border-radius: 16px;
+    width: 307px;
+    height: 257px;
+    margin-bottom: 20px;
+
+}
+
+.cocktails-subtitel {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.33333;
+    color: var(--text-color);
+    margin-bottom: 14px;
+    padding-left: 6px;
+    padding-right: 6px;
+
+}
+
+.cocktails-desc {
+    height: 54px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    color: var(--text-color);
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.cocktails-btns-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cocktails-learn-btn {
+    border: 1px solid #7e8fdd;
+    background-color: transparent;
+    border-radius: 12px;
+    padding: 14px 20px;
+    min-width: 232px;
+    height: 48px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.42857;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--text-color);
+    transition: color 250ms linear, background-color 250ms linear;
+}
+
+.cocktails-learn-btn:hover,
+.cocktails-learn-btn:focus {
+    color: #fdfdff;
+    background-color: #7e8fdd;
+}
+
+body.dark-theme .cocktails-learn-btn:hover,
+body.dark-theme .cocktails-learn-btn:focus,
+.cocktails-desc .cocktails-learn-btn:hover,
+.cocktails-learn-btn:focus {
+    color: #fdfdff;
+    background-color: #7e8fdd;
+}
+
+.cocktails-btn-like {
+    border-radius: 12px;
+    width: 48px;
+    height: 48px;
+    background-color: #7e8fdd;
+    border: none;
+    stroke: #FFFFFF;
+    fill: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: fill 250ms linear;
+}
+
+.cocktails-btn-like:hover,
+.cocktails-btn-like:focus {
+    fill: #FFFFFF;
+}
+
+
+/* .cocktails-btn-like .cocktails-icon {
+    stroke: #FFFFFF;
+    fill: transparent;
+    transition: fill 0.3s ease;
+} */
+
+.cocktails-btn-like.liked {
+    fill: #FFFFFF;
+}
+
+.not-found-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* .img-not-found {} */
+
+.not-found-desc {
+    width: 244px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.33333;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.accent-color {
+    font-style: italic;
+    color: #9cdfdf;
+}
+
+
+/* =================== MOBILE ================== */
+
+/* ==================== TABLET ================== */
+@media screen and (min-width:768px) {
+    .cocktails-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 32px 16px;
+    }
+
+    /* .cocktails-titel{} */
+
+    .cocktails-list-item {
+        border-radius: 20px;
+        width: 344px;
+        height: 523px;
+        margin: 0;
+    }
+
+    .cocktails-img {
+        border-radius: 16px;
+        width: 316px;
+        height: 289px;
+        margin-bottom: 24px;
+    }
+
+    .cocktails-subtitel {
+        font-size: 20px;
+        line-height: 1.2;
+        padding-left: 10px;
+        width: 316px;
+        height: 24px;
+        overflow: hidden;
+    }
+
+    .cocktails-desc {
+        margin-bottom: 24px;
+        padding-left: 10px;
+    }
+
+    .cocktails-btns-wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .cocktails-learn-btn {
+        font-size: 18px;
+        line-height: 1.33333;
+        border-radius: 12px;
+        padding: 16px 55px;
+        min-width: 225px;
+        height: 56px;
+        padding: 0;
+    }
+
+    .cocktails-btn-like {
+        border-radius: 12px;
+
+        width: 56px;
+        height: 56px;
+        stroke: #FFFFFF;
+        fill: transparent;
+    }
+
+    /* .cocktails-btn-like:hover,
+    .cocktails-btn-like:focus {
+        fill: #FFFFFF;
+    } */
+
+    .cocktails-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .not-found-container {
+        margin-top: 98px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .img-not-found {
+        width: 234px;
+    }
+
+    .not-found-desc {
+        width: 372px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 1.16667;
+        text-align: center;
+
+        color: var(--text-color);
+    }
+
+    .accent-color {
+        font-style: italic;
+        color: #9cdfdf;
+    }
+}
+
+
+
+/* ==================== TABLET ==================== */
+
+/* ================ DESKTOP  ==================== */
+
+
+@media screen and (min-width:768px) {
+    .cocktails-titel {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+
+    .cocktails-list {
+
+        gap: 44px 24px;
+    }
+}
+
+/* ================= DESKTOP ==================== */
