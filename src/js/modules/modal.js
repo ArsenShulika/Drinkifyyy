@@ -1,12 +1,14 @@
 import { searchIngredientsByID } from '../API/cocktails-api';
-import { ingredientsTemplateModal } from './render-function';
-
-// let favoriteIngredients =
-//   JSON.parse(localStorage.getItem('favoriteIngredients')) || [];
+import {
+  cocktailTemplateModal,
+  ingredientsTemplateModal,
+} from './render-function';
 
 const refs = {
   backdrop: document.querySelector('.backdrop'),
 };
+
+// const previousCocktail = JSON.parse(localStorage.getItem('currentCocktail'));
 
 export function addToFavorites(cocktail) {
   const favorites = JSON.parse(localStorage.getItem('favoriteCocktails')) || [];
@@ -65,10 +67,13 @@ async function handleIngredientClick(e) {
   if (!ingredientId) return;
 
   const ingredient = await searchIngredientsByID(ingredientId);
-  console.log(ingredient);
+
+  const modalContainerCocktail = document.querySelector('.modal-ingredients');
+  // !! модалка чогось не працює, якщо через refs???
+
+  modalContainerCocktail.classList.add('visually-hidden');
 
   refs.backdrop.innerHTML = ingredientsTemplateModal(ingredient);
-  refs.backdrop.classList.remove('visually-hidden');
 }
 
 // =============== OPEN INGREDIENT BUTTON ============================
@@ -111,17 +116,29 @@ function handleAddToFavoriteBtn(e) {
     });
   }
 }
-// ===============  BUTTON ADD TO FAVORITE ============================
+// ===============  BUTTON ADD TO FAVORITE ====================
 
 //! Закриваємо вікно!!!
 
 refs.backdrop.addEventListener('click', function (e) {
   const isCloseBtn = e.target.closest('[data-type="close-btn"]');
   const isOutsideModal = e.target === refs.backdrop;
+  const isBackToCocktail = e.target.closest('[data-type="backToCocktail"]');
   const isBackBtn = e.target.closest('[data-type="backBtn"]');
+
+  const previousCocktail = JSON.parse(localStorage.getItem('currentCocktail'));
 
   if (isCloseBtn || isOutsideModal || isBackBtn) {
     refs.backdrop.classList.add('visually-hidden');
+    refs.backdrop.innerHTML = '';
+    return;
+  }
+
+  // Назад до коктейлю
+  if (isBackToCocktail && previousCocktail) {
+    refs.backdrop.innerHTML = cocktailTemplateModal(previousCocktail);
+    refs.backdrop.classList.remove('visually-hidden');
+    setupModalFavoriteButton(previousCocktail, refs.backdrop);
   }
 });
 

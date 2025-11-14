@@ -21,6 +21,7 @@ const refs = {
   container: document.querySelector('.js-pagination'),
   backdrop: document.querySelector('.backdrop'),
   addToFavoriteBtn: document.querySelector('.modal-btn-add'),
+  notFoundContainer: document.querySelector('.not-found-container'),
 };
 
 const favoriteCocktails =
@@ -44,21 +45,32 @@ async function renderCocktailsByLetter(e) {
   try {
     const data = await searchCocktailsByLetter(queryLetter);
     cocktailsArr = data;
-    console.log(cocktailsArr);
-    instance.setItemsPerPage(8);
-    const markup = cocktailsTemplate(data);
 
+    if (!cocktailsArr || cocktailsArr.length === 0) {
+      // Нічого не знайдено
+      refs.cocktailsList.innerHTML = ''; // Очищуємо коктейлі
+      refs.notFoundContainer.classList.remove('visually-hidden'); // Показуємо блок "не знайдено"
+      refs.container.style.display = 'none'; // Ховаємо пагінацію
+      return;
+    }
+
+    refs.notFoundContainer.classList.add('visually-hidden'); // Ховаємо "не знайдено"
+    refs.container.style.display = 'block'; // Показуємо пагінацію
+
+    instance.setItemsPerPage(8);
     instance.setTotalItems(cocktailsArr.length);
     instance.reset(); // Скидаємо пагінацію на першу сторінку
     displayPageOfCocktails(1); // Відображаємо першу сторінку коктейлів
 
+    const markup = cocktailsTemplate(data);
     refs.cocktailsList.innerHTML = markup;
   } catch (error) {
     console.log('Error fetching cocktails:', error);
-    refs.cocktailsList.innerHTML =
-      '<p class="error">Failed to load cocktails.</p>';
+    refs.cocktailsList.innerHTML = '';
+    refs.sectionTitel.classList.add('visually-hidden');
+    refs.notFoundContainer.classList.remove('visually-hidden');
+    refs.container.style.display = 'none';
   }
-  refs.container.style.display = 'block';
 }
 
 // Функція для відображення коктейлів для поточної сторінки

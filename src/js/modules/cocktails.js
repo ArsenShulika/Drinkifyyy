@@ -6,8 +6,10 @@ const favoriteCocktails =
   JSON.parse(localStorage.getItem('favoriteCocktails')) || [];
 console.log(favoriteCocktails);
 
-const favoriteIngredients =
-  JSON.parse(localStorage.getItem('favoriteIngredients')) || [];
+const previousCocktail = JSON.parse(localStorage.getItem('currentCocktail'));
+
+// const favoriteIngredients =
+//   JSON.parse(localStorage.getItem('favoriteIngredients')) || [];
 
 let cocktailsArr;
 
@@ -19,6 +21,7 @@ const refs = {
   backdrop: document.querySelector('.backdrop'),
   likeBtn: document.querySelector('.cocktails-btn-like'),
   modalList: document.querySelector('.js-modal-list'),
+  modalDiv: document.querySelector('.modal-ingredients'),
 };
 
 document.addEventListener('DOMContentLoaded', renderCocktails);
@@ -53,6 +56,7 @@ export async function showModalCocktail(e) {
 
     const clickedCocktail = await lookUpCocktails(cocktailId);
     console.log(clickedCocktail);
+    localStorage.setItem('currentCocktail', JSON.stringify(clickedCocktail));
 
     // Рендеримо модалку
     refs.backdrop.innerHTML = cocktailTemplateModal(clickedCocktail);
@@ -60,6 +64,32 @@ export async function showModalCocktail(e) {
 
     setupModalFavoriteButton(cocktail, refs.backdrop);
   }
+
+  //! Закриваємо вікно!!!
+
+  refs.backdrop.addEventListener('click', function (e) {
+    const isCloseBtn = e.target.closest('[data-type="close-btn"]');
+    const isOutsideModal = e.target === refs.backdrop;
+    const isBackToCocktail = e.target.closest('[data-type="backToCocktail"]');
+    const isBackBtn = e.target.closest('[data-type="backBtn"]');
+
+    const previousCocktail = JSON.parse(
+      localStorage.getItem('currentCocktail')
+    );
+
+    if (isCloseBtn || isOutsideModal || isBackBtn) {
+      refs.backdrop.classList.add('visually-hidden');
+      refs.backdrop.innerHTML = '';
+      return;
+    }
+
+    // Назад до коктейлю
+    if (isBackToCocktail && previousCocktail) {
+      refs.backdrop.innerHTML = cocktailTemplateModal(previousCocktail);
+      refs.backdrop.classList.remove('visually-hidden');
+      setupModalFavoriteButton(previousCocktail, refs.backdrop);
+    }
+  });
 
   //! --- TOGGLE FAVORITE ---
 
@@ -86,15 +116,3 @@ export async function showModalCocktail(e) {
     }
   }
 }
-
-//! Закриваємо вікно!!!
-
-refs.backdrop.addEventListener('click', function (e) {
-  const isCloseBtn = e.target.closest('[data-type="close-btn"]');
-  const isOutsideModal = e.target === refs.backdrop;
-  const isBackBtn = e.target.closest('[data-type="backBtn"]');
-
-  if (isCloseBtn || isOutsideModal || isBackBtn) {
-    refs.backdrop.classList.add('visually-hidden');
-  }
-});

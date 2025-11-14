@@ -1,6 +1,15 @@
 // RenderCards
 
 export function cocktailTemplate({ _id, drink, drinkThumb, description }) {
+  // ?????????????????????????????????????????????
+
+  const favoriteIngredients =
+    JSON.parse(localStorage.getItem('favoriteCocktails')) || [];
+
+  const isFavorite = favoriteIngredients.some(item => item._id === _id);
+
+  const activeClass = isFavorite ? 'active' : '';
+
   return ` <li class="cocktails-list-item list"  data-id=${_id}>
           <img
             class="cocktails-img"
@@ -14,9 +23,9 @@ export function cocktailTemplate({ _id, drink, drinkThumb, description }) {
            ${description}
           </p>
           <div class="cocktails-btns-wrapper">
-            <button class="cocktails-learn-btn" type="button" data-type="learnMore">learn more</button>
+            <button class="cocktails-learn-btn " type="button" data-type="learnMore">learn more</button>
             <button class="cocktails-btn-like" type="button" data-type="addLikeToFavorite">
-              <svg class="cocktails-icon" data-type="cocktail-icon" width="18" height="18">
+              <svg class="cocktails-heart cocktails-icon ${activeClass}" data-type="cocktail-icon" width="18" height="18">
                 <use href="../icons/sprite.svg#icon-heart"></use>
               </svg>
             </button>
@@ -65,18 +74,18 @@ export function renderFavorites(favorites) {
 // RenderIngredients
 export function renderIngredients(favorites) {
   return favorites
-    .map(({ _id, drink, title, description, alcoholic, type }) => {
+    .map(({ _id, title, description, type }) => {
       return `
-      <li class="cocktails-list-item list" data-id=${_id}>
-        <h3 class="cocktails-subtitel">${title}</h3>
-        <h4 class="modal-subtitel-cocktails">${type}</h4>
-        <p class="cocktails-desc">
+      <li class="ingredients-list-item list" data-id="${_id}">
+        <h3 class="ingredients-subtitel">${title}</h3>
+        <h4 class="modal-subtitel-ingredients">${type}</h4>
+        <p class="ingredients-desc">
           ${description}
         </p>
-        <div class="cocktails-btns-wrapper">
+        <div class="ingredients-btns-wrapper">
           <button class="cocktails-learn-btn" type="button" data-type="learnMore">learn more</button>
           <button class="cocktails-btn-like" type="button" data-type="addLikeToFavorite">
-            <svg class="cocktails-icon" data-type="cocktail-icon" width="18" height="18">
+            <svg class="cocktails-pulse" data-type="cocktail-icon" width="18" height="18">
               <use href="../icons/sprite.svg#icon-trash"></use>
             </svg>
           </button>
@@ -107,6 +116,7 @@ export function cocktailTemplateModal({
     .join('');
 
   return `<div class="modal-ingredients list" data-id="${_id}">
+    
     <button class="modal-close-btn" data-type='close-btn'>
       <svg class="modal-close-icon" width="22" height="22">
         <use href="../icons/sprite.svg#icon-close"></use>
@@ -118,7 +128,7 @@ export function cocktailTemplateModal({
         src="${drinkThumb}"  
         alt="${drink}"
       />
-      <div>
+      <div class="modal-wrapper-act">
         <h2 class="modal-main-titel">${drink}</h2>
         <h3 class="modal-titel">ingredients</h3>
         <p class="modal-desc-ingredients">Per cocktail</p>
@@ -135,6 +145,8 @@ export function cocktailTemplateModal({
       <button class="modal-btn-add js-add-to-favorite-btn" data-type="addToFavorite">add to favorite</button>
       <button class="modal-btn-back" data-type="backBtn">Back</button>
     </div>
+    
+    
   </div>`;
 }
 
@@ -175,7 +187,7 @@ export function ingredientsTemplateModal({
       <button class="modal-btn-add js-ingredient-favorite-btn" data-id="${_id}">${
     isFavorite ? 'remove from favorite' : 'add to favorite'
   }</button>
-      <button class="modal-btn-back" data-type="backBtn">Back</button>
+      <button class="modal-btn-back" data-type="backToCocktail">Back</button>
     </div>
   </div>`;
 }

@@ -112,7 +112,6 @@ body.dark-theme {
 
 .header-section {
     padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .menu,
@@ -188,13 +187,14 @@ body.dark-theme .header-logo {
     }
 
     .header-section {
-        padding: 24px 0;
+        padding: 24px 0 0;
     }
 
     .menu-list-dropdown {
         opacity: 0;
         transition: opacity 250ms linear;
         pointer-events: none;
+        z-index: 99999;
     }
 
     .menu-list-dropdown.is-open {

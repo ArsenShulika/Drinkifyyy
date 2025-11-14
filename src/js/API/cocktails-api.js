@@ -6,7 +6,7 @@ export async function getRandomCocktails() {
   const url = baseURL + endPoint;
 
   const params = {
-    r: 8,
+    r: 9,
   };
 
   try {

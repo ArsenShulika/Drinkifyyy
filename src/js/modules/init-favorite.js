@@ -6,19 +6,16 @@ lookUpCocktails;
 let favorites = JSON.parse(localStorage.getItem('favoriteCocktails')) || [];
 
 const refs = {
-  cocktailList: document.querySelector('.js-cocktails-list'),
+  cocktailList: document.querySelector('.js-favorite-cocktails-list'),
   titel: document.querySelector('.js-titel'),
   notFoundContainer: document.querySelector('.js-image-not-found-container'),
   backdrop: document.querySelector('.backdrop'),
 };
 
 if (favorites.length === 0) {
-  refs.titel.textContent = 'Favorite cocktails';
   refs.notFoundContainer.classList.remove('visually-hidden');
 } else {
   const markup = renderFavorites(favorites);
-
-  refs.titel.textContent = 'Favorite cocktails';
   refs.cocktailList.innerHTML = markup;
 }
 
@@ -46,7 +43,6 @@ function handleChangeFavoriteStatus(e) {
   favorites = favorites.filter(c => c._id !== cocktail._id);
   localStorage.setItem('favoriteCocktails', JSON.stringify(favorites));
   if (favorites.length === 0) {
-    refs.titel.textContent = 'Favorite cocktails';
     refs.notFoundContainer.classList.remove('visually-hidden');
   }
 }

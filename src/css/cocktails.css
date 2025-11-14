@@ -1,6 +1,8 @@
 /* ============== MOBILE ================== */
 
-
+/* .ingredient-container {
+    padding-top: 60px;
+} */
 
 .cocktails {
     padding-top: 20px;
@@ -21,7 +23,6 @@
     height: 471px;
     box-shadow: 0 4px 46px 0 rgba(0, 0, 0, 0.05);
     background-color: #fdfdff;
-    ;
     padding: 14px 14px 20px 14px;
 }
 
@@ -120,14 +121,12 @@ body.dark-theme .cocktails-learn-btn:focus,
     fill: #FFFFFF;
 }
 
-
-/* .cocktails-btn-like .cocktails-icon {
+.cocktails-icon {
     stroke: #FFFFFF;
-    fill: transparent;
-    transition: fill 0.3s ease;
-} */
+}
 
-.cocktails-btn-like.liked {
+
+.cocktails-icon.active {
     fill: #FFFFFF;
 }
 
@@ -137,6 +136,7 @@ body.dark-theme .cocktails-learn-btn:focus,
     justify-content: center;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 20px;
 }
 
 /* .img-not-found {} */
@@ -160,6 +160,11 @@ body.dark-theme .cocktails-learn-btn:focus,
 
 /* ==================== TABLET ================== */
 @media screen and (min-width:768px) {
+    .cocktails {
+        padding-top: 30px;
+        padding-bottom: 100px;
+    }
+
     .cocktails-list {
         display: flex;
         flex-direction: row;
@@ -174,6 +179,10 @@ body.dark-theme .cocktails-learn-btn:focus,
         width: 344px;
         height: 523px;
         margin: 0;
+    }
+
+    .cocktails-titel {
+        margin-bottom: 40px;
     }
 
     .cocktails-img {
@@ -231,8 +240,9 @@ body.dark-theme .cocktails-learn-btn:focus,
         height: 24px;
     }
 
+
+
     .not-found-container {
-        margin-top: 98px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -250,7 +260,6 @@ body.dark-theme .cocktails-learn-btn:focus,
         font-size: 24px;
         line-height: 1.16667;
         text-align: center;
-
         color: var(--text-color);
     }
 
@@ -271,6 +280,29 @@ body.dark-theme .cocktails-learn-btn:focus,
     .cocktails-titel {
         font-size: 40px;
         line-height: 1.2;
+    }
+
+    .not-found-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 60px;
+    }
+
+    .img-not-found {
+        width: 234px;
+    }
+
+    .not-found-desc {
+        width: 372px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 1.16667;
+        text-align: center;
+
+        color: var(--text-color);
     }
 
     .cocktails-list {

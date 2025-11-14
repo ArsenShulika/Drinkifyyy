@@ -1,0 +1,53 @@
+<section class="favorite-ingredients">
+  <div class="container">
+    <h2 class="ingredients-titel">Favorite ingredients</h2>
+    <ul
+      class="favorite-ingredients-list list js-favorite-ingredients-list"
+    ></ul>
+    <div
+      class="ingredients-not-found-container visually-hidden js-image-not-found-container"
+    >
+      <picture class="js-white-theme">
+        <source
+          srcset="
+            ../images/favorite-cocktails/not_found_desktop_and_tablet@1x.png 1x,
+            ../images/favorite-cocktails/not_found_desktop_and_tablet@2x.png 2x
+          "
+          media="(min-width:768px)"
+        />
+        <source
+          srcset="../images/favorite-cocktails/not_found_mobile@2x.png 2x"
+          media="(max-width:768px)"
+        />
+        <img
+          src="../images/favorite-cocktails/not_found_mobile@1x.png 1x"
+          alt="image not found"
+          class="img-not-found"
+        />
+      </picture>
+      
+      <picture class="js-black-theme">
+        <source
+          srcset="
+            ../images/favorite-cocktails/not_found_desktop_and_tablet@1x.png 1x,
+            ../images/favorite-cocktails/not_found_desktop_and_tablet@2x.png 2x
+          "
+          media="(min-width:768px)"
+        />
+        <source
+          srcset="../images/favorite-cocktails/not_found_mobile@2x.png 2x"
+          media="(max-width:768px)"
+        />
+        <img
+          src="../images/favorite-cocktails/not_found_mobile@1x.png 1x"
+          alt="image not found"
+          class="img-not-found"
+        />
+      </picture>
+      <p class="not-found-desc">
+        You haven't added any
+        <span class="accent-color">favorite cocktails</span> yet
+      </p>
+    </div>
+  </div>
+</section>

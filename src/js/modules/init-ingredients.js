@@ -5,18 +5,16 @@ let favoriteIngredients =
   JSON.parse(localStorage.getItem('favoriteIngredients')) || [];
 
 const refs = {
-  cocktailList: document.querySelector('.js-cocktails-list'),
+  cocktailList: document.querySelector('.js-favorite-ingredients-list'),
   titel: document.querySelector('.js-titel'),
   notFoundContainer: document.querySelector('.js-image-not-found-container'),
   backdrop: document.querySelector('.backdrop'),
 };
 
 if (favoriteIngredients.length === 0) {
-  refs.titel.textContent = 'Favorite ingredients';
   refs.notFoundContainer.classList.remove('visually-hidden');
 } else {
   const markup = renderIngredients(favoriteIngredients);
-  refs.titel.textContent = 'Favorite cocktails';
   refs.cocktailList.innerHTML = markup;
 }
 
@@ -28,7 +26,7 @@ function handleChangeFavoriteStatus(e) {
   const deleteBtn = e.target.closest('[data-type="addLikeToFavorite"]');
   if (!deleteBtn) return;
 
-  const card = e.target.closest('.cocktails-list-item');
+  const card = e.target.closest('.ingredients-list-item');
 
   if (!card) return;
 
@@ -48,7 +46,6 @@ function handleChangeFavoriteStatus(e) {
   );
 
   if (favoriteIngredients.length === 0) {
-    refs.titel.textContent = 'Favorite ingredients';
     refs.notFoundContainer.classList.remove('visually-hidden');
   }
 }
@@ -61,7 +58,7 @@ function showModalIngredients(e) {
   const learnMoreBtn = e.target.closest('[data-type="learnMore"]');
 
   if (learnMoreBtn) {
-    const card = learnMoreBtn.closest('.cocktails-list-item');
+    const card = learnMoreBtn.closest('.ingredients-list-item');
     if (!card || !favoriteIngredients.length) return;
 
     const ingredientId = card.dataset.id;
@@ -71,6 +68,13 @@ function showModalIngredients(e) {
 
     refs.backdrop.innerHTML = ingredientsTemplateModal(ingredient);
     refs.backdrop.classList.remove('visually-hidden');
+
+    const nestedModalContainer = document.querySelector(
+      '.nested-ingredient-modal'
+    );
+    if (nestedModalContainer) {
+      nestedModalContainer.innerHTML = ingredientsTemplateModal(ingredient);
+    }
 
     setupModalFavoriteButton(ingredient, refs.backdrop);
   }
