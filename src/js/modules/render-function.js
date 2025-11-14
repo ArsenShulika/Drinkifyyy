@@ -1,4 +1,5 @@
 // RenderCards
+const spriteHref = new URL('../../icons/sprite.svg', import.meta.url).href;
 
 export function cocktailTemplate({ _id, drink, drinkThumb, description }) {
   // ?????????????????????????????????????????????
@@ -26,7 +27,7 @@ export function cocktailTemplate({ _id, drink, drinkThumb, description }) {
             <button class="cocktails-learn-btn " type="button" data-type="learnMore">learn more</button>
             <button class="cocktails-btn-like" type="button" data-type="addLikeToFavorite">
               <svg class="cocktails-heart cocktails-icon ${activeClass}" data-type="cocktail-icon" width="18" height="18">
-                <use href="../icons/sprite.svg#icon-heart"></use>
+                <use href="${spriteHref}#icon-heart"></use>
               </svg>
             </button>
           </div>
@@ -60,7 +61,7 @@ export function renderFavorites(favorites) {
           <button class="cocktails-learn-btn" type="button" data-type="learnMore">learn more</button>
           <button class="cocktails-btn-like" type="button" data-type="addLikeToFavorite">
             <svg class="cocktails-icon" data-type="cocktail-icon" width="18" height="18">
-              <use href="../icons/sprite.svg#icon-trash"></use>
+              <use href="${spriteHref}#icon-trash"></use>
             </svg>
           </button>
         </div>
@@ -86,7 +87,7 @@ export function renderIngredients(favorites) {
           <button class="cocktails-learn-btn" type="button" data-type="learnMore">learn more</button>
           <button class="cocktails-btn-like" type="button" data-type="addLikeToFavorite">
             <svg class="cocktails-pulse" data-type="cocktail-icon" width="18" height="18">
-              <use href="../icons/sprite.svg#icon-trash"></use>
+              <use href="${spriteHref}#icon-trash"></use>
             </svg>
           </button>
         </div>
@@ -119,7 +120,7 @@ export function cocktailTemplateModal({
     
     <button class="modal-close-btn" data-type='close-btn'>
       <svg class="modal-close-icon" width="22" height="22">
-        <use href="../icons/sprite.svg#icon-close"></use>
+        <use href="${spriteHref}#icon-close"></use>
       </svg>
     </button>
     <div class="modal-wrapper">
@@ -165,7 +166,7 @@ export function ingredientsTemplateModal({
   return ` <div class="modal-cocktails">
     <button class="modal-close-btn" data-type="close-btn">
       <svg class="modal-close-icon" width="22" height="22">
-        <use href="../icons/sprite.svg#icon-close"></use>
+        <use href="${spriteHref}#icon-close"></use>
       </svg>
     </button>
     <h2 class="modal-titel-cocktails">${title}</h2>
