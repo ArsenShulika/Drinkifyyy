@@ -11,9 +11,10 @@ export function cocktailTemplate({ _id, drink, drinkThumb, description }) {
 
   const activeClass = isFavorite ? 'active' : '';
 
-  return ` <li class="cocktails-list-item list"  data-id=${_id}>
+  return `<li class="cocktails-list-item list" data-testid="cocktail-card"  data-id="${_id}">
           <img
             class="cocktails-img"
+            data-testid="cocktail-image"
             src="${drinkThumb}"
             width="307"
             height="257"
